@@ -3,10 +3,20 @@ const Header = (props) => {
     <h1>{props.course_name}</h1>
   )
 }
+const Part = (props) => {
+  return (
+    <p> {props.part_name} {props.part_count}</p>
+  )
+}
 
 const Content = (props) => {
   return(
-    <p>{props.part_name} {props.part_count} </p>
+    <div> 
+      <Part part_name = {props.part1} part_count = {props.exercises1} />
+      <Part part_name = {props.part2} part_count = {props.exercises2} />
+      <Part part_name = {props.part3} part_count = {props.exercises3} />
+    </div>
+    
   )
 }
 
@@ -28,9 +38,7 @@ const App = () => {
   return (
     <div>
       < Header course_name= {course}/>
-      < Content part_name = {part1} part_count = {exercises1} />
-      < Content part_name = {part2} part_count = {exercises2} />
-      < Content part_name = {part3} part_count = {exercises3} />
+      < Content part1 = {part1} part2 = {part2} part3 = {part3} exercises1 ={exercises1} exercises2 ={exercises2} exercises3 ={exercises3} />
       < Total sum = {exercises1 + exercises2 + exercises3} />
     </div>
   )
